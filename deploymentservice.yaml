@@ -34,4 +34,4 @@ spec:
       targetPort: 8091
       # Uncomment the following line if you need a specific nodePort
       # nodePort: 30000 # Example nodePort value (should be in the range 30000-32767)
-  type: LoadBalancer
+  type: NodePort
