@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image to dockerhub'){
           steps{
-               sh 'docker push sairamana33/financeproject:1'
+               sh 'docker push sairamana33/endtoendproject31july:v1'
            }
         }
         
