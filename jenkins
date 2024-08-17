@@ -14,13 +14,17 @@ pipeline {
                 }
             }
         }
-          stage('Docker login') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-pwd', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                    sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh 'docker push sairamana33/endtoendproject31july:v1'
+          stage('Login to dockerhub and push the file'){
+            steps{
+                withCredentials([string(credentialsId: 'dockerhubpasswd', variable: 'dockerhubpass')]) {
+                    sh 'docker login -u sairamana33 -p ${dockerhubpass}'
                 }
             }
+        }
+        stage('push image to dockerhub'){
+          steps{
+               sh 'docker push sairamana33/financeproject:1'
+           }
         }
         
         
