@@ -11,5 +11,3 @@
     become : yes
     become_user : root
 
-  - name: Deploy Docker Container
-    command: docker run -itd -p 8084:8081 sairamana33/healthcareproject:v1
