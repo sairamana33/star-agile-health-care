@@ -17,7 +17,7 @@ spec:
           image: sairamana33/healthcareproject:v1
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8091
+            - containerPort: 8082
 
 ---
 
@@ -30,8 +30,8 @@ spec:
     app: spring-boot-k8s
   ports:
     - protocol: TCP
-      port: 8091
-      targetPort: 8091
+      port: 8082
+      targetPort: 8082
       # Uncomment the following line if you need a specific nodePort
       # nodePort: 30000 # Example nodePort value (should be in the range 30000-32767)
   type: NodePort
